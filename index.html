@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+    <style>
+        aside{
+            width: 100vw;
+            height: 100vh;
+        }
+        main{
+            width: 550px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 120px auto;
+            background: linear-gradient(50deg, rgb(121, 72, 162), rgb(21, 168, 92));
+        }
+        h1{
+            text-align: center;
+            color: red;
+        }
+        .input{
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            margin: 5px 0 5px 100px;
+            background-color: white;
+            padding-left: 10px;
+        }
+        .di{
+            display: flex;
+            align-items: center;
+        }
+        marquee{
+            color: burlywood;
+        }
+        button{
+            background-color: red;
+            height: 50px;
+            width: 70px;
+            border: none;
+            margin-left: 10px;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        #div2{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <main>
+            <h1>Grading System</h1>
+            <marquee behavior="" direction="right">Enter your score to know your grade</marquee>
+            <div class="di">
+                <input type="text" placeholder="Enter your score" class="input" id="div1"></input>
+                <button onclick="solve()">Enter</button>
+            </div>
+            <div class="input" id="div2"></div>
+        </main>
+    </aside>
+</body>
+<script>
+        let div1 = document.getElementById("div1")
+        let div2 = document.getElementById("div2")
+    function solve(){
+        ans = div1.value;
+    
+        if(ans > 100){
+            div2.innerHTML = "Invalid Operation"
+            div2.style.border = "3px solid red";
+            div2.style.color = "red";
+        }else if(ans >= 70){
+            div2.innerHTML = "A - Excellent 😊👌"
+            div2.style.border = "3px solid green";
+            div2.style.color = "green";
+        } else if(ans >= 60){
+            div2.innerHTML = "B - Good 😉"
+            div2.style.border = "3px solid lightgreen";
+            div2.style.color = "lightgreen";
+        } else if(ans >= 50){
+            div2.innerHTML = "C - Fair 😐"
+            div2.style.border = "3px solid yellow";
+            div2.style.color = "yellow";
+        }else if(ans >= 40){
+            div2.innerHTML = "D - pass 😒"
+            div2.style.border = "3px solid lightcoral";
+            div2.style.color = "lightcoral";
+        }else if(ans == ""){
+            div2.innerHTML = " "
+            div2.style.border = "1px solid black";
+            div2.style.color = "";
+        }else if(ans <= 39){
+            div2.innerHTML = "F - Failure 🙄😡"
+            div2.style.border = "3px solid red";
+            div2.style.color = "red";
+        }else{
+            div2.innerHTML = ""
+        }
+    }
+</script>
+</html>
